@@ -41,5 +41,5 @@
 - [ ] Slides are visually clean and professional. (2 points)
 
 # Presentation Slides: 
-[Slides](https://fred.stlouisfed.org/series/ROWFDIQ027S](https://docs.google.com/presentation/d/1xZGFCKjBNmOXQgbEDFzU3dubmzX6WCUBbWhB4KKthsA/edit?usp=sharing) 
+[Slides](https://docs.google.com/presentation/d/1xZGFCKjBNmOXQgbEDFzU3dubmzX6WCUBbWhB4KKthsA/edit?usp=sharing) 
 
