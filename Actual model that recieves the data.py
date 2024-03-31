@@ -1,1 +1,0 @@
-# Actual model that recieves the data
