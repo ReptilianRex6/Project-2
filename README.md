@@ -1,47 +1,41 @@
 # Project-2
 
-### Our Goal: 
-- Predict the winners of this season's Baseball World Series 
-- Consider Corrilations for injuries, commited errors, ect.
+## Our Goal
+Predicting the number of hits for baseball players in the next year.
 
+## Step-by-step
+### Data Sources (Data_prep folder)
+`getting_data.ipynb`  
+The initial dataset was created using the pybaseball library and a function that calls `batting_stats`. This function, communicating with batting stats from FanGraphs, retrieved all players who had at least 50 Plate Appearances each year from 2014-2019. The dataset fetched 320 different parameters, creating our initial dataset `resources/full_batting_data.csv`.
 
-# Requirements
-### Data Model Implementation (25 points)
-- [ ] There is a Jupyter notebook that thoroughly describes the data extraction, cleaning, and transformation process, and the cleaned data is exported as CSV files for the machine learning model. (10 points)
+`players_speed_2014-2019.ipynb`  
+Since a player's speed is one of the factors influencing the achievement of hits (H), we utilized another function, `statcast_sprint_speed`, also part of the pybaseball library. This function communicates with [https://baseballsavant.mlb.com/](https://baseballsavant.mlb.com/), which uses advanced statcast technology for collecting game data. Here we fetched some parameters related to players' speed, resulting in data for each year from 2015 - 2019. (data for 2014 was not available)
 
-- [ ] A Python script initializes, trains, and evaluates a model or loads a pretrained model. (10 points)
+`add_next_years_hits.ipynb`  
+In this step, we defined our target column 'next_year_hits' and saved the dataset as `data2.csv`.
 
-- [ ] The model demonstrates meaningful predictive power at least 75% classification accuracy or 0.80 R-squared. (5 points)
+#### Data Merging and Cleaning
+`extended_dataset.ipynb`  
+Next, we merged all data into one dataframe, removed unnecessary columns, and filled in missing data where necessary. We also excluded all rows related to the 2014 season and all players who appear only in one season. Finally, we removed all columns of dtype='object'. Once all columns were filled with appropriate data, we created a dataset ready for modeling: `resources/clean_extended_data.csv`.
 
-### Data Model Optimization (25 points)
-- [ ] The model optimization and evaluation process showing iterative changes made to the model and the resulting changes in model performance is documented in either a CSV/Excel table or in the Python script itself. (15 points)
+### Data Modeling (model_output folder)
+`feature_selections.ipynb`  
+Since initial modeling attempts showed that a large number of features caused data leakage, we proceeded with selecting features that could potentially give the best result. We selected ten features that do not contain the number of hits but have the highest feature importance in the RandomForestRegressor model and created a list of features.
 
-- [ ] Overall model performance is printed or displayed at the end of the script. (10 points)
+`new_dataset3.ipynb`  
+We combined the list created in the previous step with the dataset2 created earlier to obtain the final dataset `resources/data3.csv`.
 
-### GitHub Documentation (25 points)
-- [ ] GitHub repository is free of unnecessary files and folders and has an appropriate .gitignore in use. (10 points)
+`random_forest_extended_data.ipynb`  
+Once all data were collected and prepared, we approached modeling again with the RandomForestRegressor model, and the results this time were better but still unsatisfactory.  
+MSE: 724.0826046420825
+RMSE: 26.90878303903918
+R^2: 0.728509887566525
 
-- [ ] The README is customized as a polished presentation of the content of the project. (15 points)
+`baseball_project (1).ipynb`  
+The next option was to see how our dataset would perform with the GradientBoostingRegressor model. We created a function that iteratively passes the model through our dataset with different parameters to establish which parameters provide the best results.
 
-### Presentation Requirements (25 points)
-- [ ] Your presentation should cover the following:
-
-- [ ] An executive summary or overview of the project and project goals. (5 points)
-
-- [ ] An overview of the data collection, cleanup, and exploration processes. Include a description of how you evaluated the trained model(s) using testing data. (5 points)
-
-- [ ] The approach that your group took in achieving the project goals. (5 points)
-
-- [ ] Any additional questions that surfaced, what your group might research next if more time was available, or share a plan for future development. (3 points)
-
-- [ ] The results and conclusions of the application or analysis. (3 points)
-
-- [ ] Slides effectively demonstrate the project. (2 points)
-
-- [ ] Slides are visually clean and professional. (2 points)
-
-# Presentation: 
-[Slides](https://docs.google.com/presentation/d/1xZGFCKjBNmOXQgbEDFzU3dubmzX6WCUBbWhB4KKthsA/edit?usp=sharing) 
-
-### Test
-
+`gradient_boosting.ipynb`  
+We included the best-performing parameters in our model, and these are the final results:  
+MSE: 398.34215931956476  
+MAE: 13.657809975591451  
+R² Score: 0.8506441710830508
