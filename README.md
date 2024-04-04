@@ -9,14 +9,14 @@
 ### Data Model Implementation (25 points)
 - [ ] There is a Jupyter notebook that thoroughly describes the data extraction, cleaning, and transformation process, and the cleaned data is exported as CSV files for the machine learning model. (10 points)
 
-- [ ] A Python script initializes, trains, and evaluates a model or loads a pretrained model. (10 points)
+- [x] A Python script initializes, trains, and evaluates a model or loads a pretrained model. (10 points)
 
-- [ ] The model demonstrates meaningful predictive power at least 75% classification accuracy or 0.80 R-squared. (5 points)
+- [x] The model demonstrates meaningful predictive power at least 75% classification accuracy or 0.80 R-squared. (5 points)
 
 ### Data Model Optimization (25 points)
 - [ ] The model optimization and evaluation process showing iterative changes made to the model and the resulting changes in model performance is documented in either a CSV/Excel table or in the Python script itself. (15 points)
 
-- [ ] Overall model performance is printed or displayed at the end of the script. (10 points)
+- [x] Overall model performance is printed or displayed at the end of the script. (10 points)
 
 ### GitHub Documentation (25 points)
 - [ ] GitHub repository is free of unnecessary files and folders and has an appropriate .gitignore in use. (10 points)
@@ -26,11 +26,11 @@
 ### Presentation Requirements (25 points)
 - [ ] Your presentation should cover the following:
 
-- [ ] An executive summary or overview of the project and project goals. (5 points)
+- [x] An executive summary or overview of the project and project goals. (5 points)
 
 - [ ] An overview of the data collection, cleanup, and exploration processes. Include a description of how you evaluated the trained model(s) using testing data. (5 points)
 
-- [ ] The approach that your group took in achieving the project goals. (5 points)
+- [x] The approach that your group took in achieving the project goals. (5 points)
 
 - [ ] Any additional questions that surfaced, what your group might research next if more time was available, or share a plan for future development. (3 points)
 
