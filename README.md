@@ -27,6 +27,14 @@ This project is structured into two main folders: `Data_prep` and `model_output`
    - MSE: 398.34
    - MAE: 13.66
    - R² Score: 0.851
+9. **XGBoost.ipynb**: Tests the dataset with the XGBoost, with hyperparameter tuning it to achieve the best performance. Final results are:
+    - MSE: 400.07
+   - MAE: 14.86
+   - R² Score: 0.85
+11.  **XGBoost.ipynb**: Tests the dataset with LinearRegression to establish a baseline. Results are:
+     - MSE: 0.351
+   - MAE: 17.69
+   - R² Score: 0.75
 
 ## Instructions for Running the Notebooks
 To achieve the best results, follow these steps in order:
