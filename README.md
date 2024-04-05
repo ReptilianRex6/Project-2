@@ -27,6 +27,7 @@ This project is structured into two main folders: `Data_prep` and `model_output`
    - MSE: 398.34
    - MAE: 13.66
    - R² Score: 0.851
+   
 **(`model_output` folder)**
 9. **XGBoost.ipynb**: Tests the dataset with the XGBoost, with hyperparameter tuning it to achieve the best performance. Final results are:
     - MSE: 400.07
