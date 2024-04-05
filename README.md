@@ -4,9 +4,22 @@
 Our primary objective is to predict the number of hits baseball players will achieve in the upcoming year, leveraging historical data and advanced statistical modeling techniques.
 
 ## How to Use This Project
-This project is structured into two main folders: `Data_prep` and `model_output`, containing Jupyter Notebooks that should be run in a specific sequence to prepare the data, select features, and perform modeling.
+This project is structured into two parts: `Data_prep` for future development, and `This Script outputs predicted hits for next year.py`
 
-### Step-by-Step Guide
+### Instructions for the Python file:
+- On the main repo page, open the Python file `This Script outputs predicted hits for next year.py`
+
+- The file loads and trains on data from given years
+- You can leave as is unless there's a range of years you want to train on. In that case, fill in: ` data = batting_stats(years_go_here)`
+  
+![Screenshot 2024-04-03 230803](https://github.com/ReptilianRex6/Project-2/assets/149134955/0077bf11-6408-4138-8651-faf30b0dada7)
+- Then, near the bottom, you can select what year to predict the hits for. Simply replace `(2019)` with the year you want.
+  
+![Screenshot 2024-04-03 225832](https://github.com/ReptilianRex6/Project-2/assets/149134955/ee9164c3-4fa8-4cf5-9105-806b8f6de1d2)
+
+
+
+### Step-by-Step For future developments in `Data_prep`
 
 #### Data Preparation (`Data_prep` folder)
 1. **`getting_data.ipynb`**: Generates the initial dataset with 320 parameters for all players with at least 50 Plate Appearances annually from 2014-2019, using the `pybaseball` library to fetch batting stats from FanGraphs. Saves the dataset as `resources/full_batting_data.csv`.
@@ -23,28 +36,35 @@ This project is structured into two main folders: `Data_prep` and `model_output`
    - MSE: 724.08
    - RMSE: 26.91
    - R²: 0.729
+
 8. **`gradient_boosting.ipynb`**: Tests the dataset with a GradientBoostingRegressor model, tuning it to achieve the best performance. The final modeling results are:
    - MSE: 398.34
    - MAE: 13.66
    - R² Score: 0.851
    
-**(`model_output` folder)**
-9. **XGBoost.ipynb**: Tests the dataset with the XGBoost, with hyperparameter tuning it to achieve the best performance. Final results are:
-    - MSE: 400.07
-   - MAE: 14.86
-   - R² Score: 0.85
-**ETHAN PUT IN PATS MODEL FOLDER**
-11.  **LinearRegression.ipynb**: Tests the dataset with LinearRegression to establish a baseline. Results are:
-     - MSE: 0.351
-     - MAE: 17.69
-     - R² Score: 0.75
 
-## Instructions for Running the Notebooks
+
+### Instructions for Running the Notebooks
 To achieve the best results, follow these steps in order:
 1. Run all notebooks in the `Data_prep` folder sequentially (in the order described above Step-by-step) to generate and prepare the data set.
 2. Proceed with the `model_output` folder's notebooks, starting with `feature_selections.ipynb` to determine the features to be used.
 3. Use `new_dataset3.ipynb` to compile the final dataset with selected features.
 4. Finally, run the modeling notebooks (`random_forest_extended_data.ipynb` and `gradient_boosting.ipynb`) to train and evaluate the models.
+
+
+## Other Notebooks that explore model posibilities:
+- XGBoost folder/ **`XGBoost.ipynb`**: Tests the dataset with the XGBoost, with hyperparameter tuning it to achieve the best performance. Final results are:
+   - MSE: 400.07
+   - MAE: 14.86
+   - R² Score: 0.85
+
+- Kfolds Folder:
+   - Random Forest Cross Validation R^2: 0.8140286511015254
+   - Gradient Boosting Cross Validation R^2: 0.775168644462665
+ 
+- Data Prep And Model Evaluation.ipynb
+   - Includes another Random Forest Evaluation
+   - Has code from Matt Hergott that helped us shape the best model
 
 ## Conclusion
 This project employs a data-driven approach to predict baseball players' performance in terms of hits. By meticulously preparing data, selecting relevant features, and modeling using advanced regressor algorithms, we've developed a predictive framework that can be further tuned and enhanced for better accuracy.
